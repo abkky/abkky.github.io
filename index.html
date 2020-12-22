@@ -41,8 +41,6 @@ table td:hover {
 </head>
 <body> 
 <h1 class='text-center p-3'>Time Table(CSE)</h1> 
-<p id="wish" class="text-center">Hello</p>
-
 <a class="tablink" onclick="openbatch('31', this, 'red')" id="a">31</a>
 <a class="tablink" onclick="openbatch('32', this, 'red')" id="b">32</a>
 <a class="tablink" onclick="openbatch('33', this, 'red')" id="c">33</a>
@@ -83,7 +81,7 @@ table td:hover {
 	  <td onclick="coa()">COA</td>
 	  <td rowspan="6" style="vertical-align:middle;"><span style='writing-mode: vertical-lr;font-size:40px;font-weight:900;transform:rotate(180deg);'>LUNCH</span></td>
       <td onclick="tol()">T-TOL</td>
-	  <td onclick="lds()" colspan="2">L-DS</td>
+	  <td onclick="ltol()" colspan="2">L-TOL</td>
 	  
     </tr>
     <tr>
@@ -192,16 +190,16 @@ function checktime(){
 	else if(t<870){tlect=4;}
 	else if(t<930){tlect=5;}
 	else if(t<990){tlect=6;}
-	if(tday==1 && t>820){tlect=tlect+1;}
-	if(t>990){if (tday==5){tday=1;}else{tday=tday+1;}tlect=0;}
+	if(t>990){if (tday==6){tday=1;}else{tday=tday+1;}tlect=0;}
 	if(t>765 && t<820){tday=1;tlect=4;}
-	
 	if(tabid=='tab4'){
+		if(tday==1 && t>820){tlect=tlect+1;}
 		if(tday==1 && t>930 && t<990 ){tlect=5;}
 		if(tday==2 && t>870){tday=tday+1;tlect=0;}
-		if(tday==3 && t>700){tday=tday+1;tlect=0;}
+		if(tday==3 && t>700){tlect=0;}
 		if(tday==5 && t<600){tlect=tlect+1;}
 	}
+
 	if(da>6){tday=1;}
 	var x = document.getElementById(tabid).getElementsByTagName("tr");
     var y= x[tday].getElementsByTagName("td");
@@ -216,7 +214,7 @@ var COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz
 var PY="https://us04web.zoom.us/j/71852882107?pwd=N0dCRDkwSnRSRHpabURCU1VrZUdkZz09";
 var UHV="https://zoom.us/j/6438418533?pwd=SitXQ1BGd1Y0NFlhRkxPTGVRYmhvdz09";
 var L_COA="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09";
-var L_DS="https://us02web.zoom.us/j/9025097650?pwd=WGlLV09zZHFkMHJ3Tm5GK2JCNnNGUT09";
+var L_DS="https://us04web.zoom.us/j/6197662772?pwd=YjJpWEJVaDhhOXA1WHZyTGFKKzZGdz09";
 var L_TOL="https://us02web.zoom.us/j/3361033603?pwd=cXNvTWQyUHN1ZHRQOFFDVHNIUGxZdz09";
 function tol(){window.location = TOL;}
 function ds(){window.location = DS;}
@@ -229,13 +227,5 @@ function lds(){window.location = L_DS;}
 function ltol(){window.location = L_TOL;}
 
 </script>
-<script type="application/javascript">
-  function getIP(json) {
-	document.getElementById("wish").innerHTML = "Hello : "+json.ip;
-  }
-  
-</script>
-
-<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>  
 </html> 
