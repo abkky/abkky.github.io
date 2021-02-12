@@ -107,6 +107,9 @@ table td{
 #finishq{
 	display:none;
 }
+#finishe{
+	display:none;
+}
 #finishp{
 	display:none;
 }
@@ -170,13 +173,12 @@ var i=0;
   });
 });
 </script>
-
 </head>
 <body> 
-
 <h1 class='text-center p-3 m-0'><span class="head1">Quiz/Exams</span> Schedules</h1> 
 <div class='row'>
-<div id="show-hidden-menu" class='btn-lg btn-dark text-center col-sm-2' style='color:white;background-color:#212529;'>Show/Hide notices</div></div><br/>
+	<div id="show-hidden-menu" class='btn-lg btn-dark text-center col-sm-2' style='color:white;background-color:#212529;'>Show/Hide notices</div>
+</div><br/>
 <a class="tablink col-sm-3" onclick="openbatch('31', this, 'red')" id="a">Exams</a>
 <a class="tablink col-sm-3" onclick="openbatch('32', this, 'red')" id="b">Quiz(Weekly)</a>
 <a class="tablink col-sm-3" onclick="openbatch('33', this, 'red')" id="c">Prutor</a>
@@ -188,27 +190,22 @@ function mainexam(){
 	var mon= d.getMonth()
 	var t=d.getHours();
 	var	da=d.getDate();
-	//var mon=2;
-	//var da=9;
-	//var t=16;
-	var dte;
+	//var mon=1, da=10,t=16;
+	var dte,endt=17,e1=9,e2=12,e3=15,e4=17,e5=19,e6=22;
 	if(mon==2){
-		if(da<=9){dte=1;}
-		if(da==10){dte=2;}
-		if(da==12){dte=3;}
-		if(da==13){dte=4;}
-		if(da==15){dte=5;}
-		if(da==16){dte=6;}
-		if(da>=9&&t>=17){dte++}
-		if(da==11){dte=3;}
-		if(da==14){dte=5;}
-		if((da>=16&&t>=17)||da>=17){ document.getElementById("tab1").style.display = "none";
+		if(da<=e1){dte=1;}
+		if((da==e1 && t>=endt)||da>e1 && da<=e2){dte=2}
+		if((da==e2 && t>=endt)||da>e2 && da<=e3){dte=3}
+		if((da==e3 && t>=endt)||da>e3 && da<=e4){dte=4}
+		if((da==e4 && t>=endt)||da>e4 && da<=e5){dte=5}
+		if((da==e5 && t>=endt)||da>e5 && da<=e6){dte=6}
+		if((da==e6 && t>=endt)||da>=e6){ document.getElementById("tab1").style.display = "none";
 			document.getElementById("pofexam").style.display = "none";
 			document.getElementById("finishe").style.display = "inline";
 		}
 	}
 	else{
-		var dte=1;
+		dte=1;
 	}
 	var x = document.getElementById("tab1").getElementsByTagName("tr");
     x[dte].classList.add("active");
@@ -267,12 +264,15 @@ window.onload = mainexam;
   </tbody>
 </table>
 <p style="font-weight:bold;text-align:center;font-style:italic;" id='pofexam'>*Timing of exams is 02:00 PM to 05:00 PM for all subjects</p>
+<div id="finishe">
+	<h2 class="text-center">Enjoy!!Exams Finished</h2>
+	<p class="text-center">Next Semester Starting Soon</p>
+</div>
 </div>
 
 <div id="32" class="tabcontent">
 <script>
 function quizzz(){
-	
 	var d2 = new Date();
 	var mon2= d2.getMonth()
 	var t2=d2.getHours();
@@ -413,7 +413,7 @@ function dip(){
 	//var mon4=1;
 	//var da4=13;
 	//var t4=14;
-	var endt=14;
+	var endt=10;
 	var dte4;
 	if (mon4==0){
 		if(da4<=20){dte4=3;}
