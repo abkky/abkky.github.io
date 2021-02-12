@@ -179,8 +179,8 @@ var i=0;
 <div class='row'>
 	<div id="show-hidden-menu" class='btn-lg btn-dark text-center col-sm-2' style='color:white;background-color:#212529;'>Show/Hide notices</div>
 </div><br/>
-<a class="tablink col-sm-3" onclick="openbatch('31', this, 'red')" id="a">Exams</a>
-<a class="tablink col-sm-3" onclick="openbatch('32', this, 'red')" id="b">Quiz(Weekly)</a>
+<a class="tablink col-sm-3" onclick="openbatch('31', this, 'red')" id="a">END SEM</a>
+<a class="tablink col-sm-3" onclick="openbatch('32', this, 'red')" id="b">PRE END SEM</a>
 <a class="tablink col-sm-3" onclick="openbatch('33', this, 'red')" id="c">Prutor</a>
 <a class="tablink col-sm-3" onclick="openbatch('34', this, 'red')" id="d">Quiz(Diploma)</a>
 <script>
@@ -190,7 +190,7 @@ function mainexam(){
 	var mon= d.getMonth()
 	var t=d.getHours();
 	var	da=d.getDate();
-	//var mon=1, da=10,t=16;
+	//var mon=2, da=22,t=16;
 	var dte,endt=17,e1=9,e2=12,e3=15,e4=17,e5=19,e6=22;
 	if(mon==2){
 		if(da<=e1){dte=1;}
@@ -199,7 +199,7 @@ function mainexam(){
 		if((da==e3 && t>=endt)||da>e3 && da<=e4){dte=4}
 		if((da==e4 && t>=endt)||da>e4 && da<=e5){dte=5}
 		if((da==e5 && t>=endt)||da>e5 && da<=e6){dte=6}
-		if((da==e6 && t>=endt)||da>=e6){ document.getElementById("tab1").style.display = "none";
+		if((da==e6 && t>=endt)||da>e6){ document.getElementById("tab1").style.display = "none";
 			document.getElementById("pofexam").style.display = "none";
 			document.getElementById("finishe").style.display = "inline";
 		}
@@ -277,64 +277,75 @@ function quizzz(){
 	var mon2= d2.getMonth()
 	var t2=d2.getHours();
 	var da2=d2.getDate();
-	//var mon2=0;
-	//var da2=12;
-	//var t2=3;
-	var dte2;
-	if(mon2==0){
-		if(da2<=25){dte2=1;}
-		if((da2==25&&t2>=10)||(da2>25&&da2<=29)){dte2=2;}
-		if((da2==29&&t2>=10)||da2>29){dte2=3;}		
-	}
-	else if(mon2==1){
-		if(da2<=1){dte2=3;}
-		if((da2==1&&t2>=10)||(da2>1&&da2<=8)){dte2=4;}
-		if((da2==8&&t2>=10)||(da2>8&&da2<=12)){dte2=5;}
-		if((da2>=12&&t2>=10)||da2>=13){ document.getElementById("tab2").style.display = "none";
+	//var mon2=1,da2=27,t2=16;
+	var dte2,endt=17,pe1=22,pe2=23,pe3=24,pe4=25,pe5=26,pe6=27;
+	if(mon2==1){
+		if(da2<=pe1){dte2=1;}
+		if((da2==pe1 && t2>=endt)||da2>pe1 && da2<=pe2){dte2=2;}
+		if((da2==pe2 && t2>=endt)||da2>pe2 && da2<=pe3){dte2=3;}
+		if((da2==pe3 && t2>=endt)||da2>pe3 && da2<=pe4){dte2=4;}
+		if((da2==pe4 && t2>=endt)||da2>pe4 && da2<=pe5){dte2=5;}
+		if((da2==pe5 && t2>=endt)||da2>pe5 && da2<=pe6){dte2=6;}
+		if((da2==pe6 && t2>=endt)||da2>pe6){ document.getElementById("tab2").style.display = "none";
 			document.getElementById("finishq").style.display = "inline";
 		}
 	}
-	if(mon2==0 ||(mon2==1&&da2<=13)){
+	else{
+		document.getElementById("tab2").style.display = "none";
+			document.getElementById("finishq").style.display = "inline";
+	}
+
+	if(mon2==1){
 	var x2 = document.getElementById("tab2").getElementsByTagName("tr");
     x2[dte2].classList.add("active");
 	}
-	
 }
-
 </script>
 <table class="table table-bordered shadow-lg" id="tab2">
   <thead class="thead-dark">
 	<tr>
 		<th scope="col">Date</th>
-		<th scope="col">Day</th>
+		<th scope="col">Day</th>	
+		<th scope="col">PES</th>
 		<th scope="col">Sub Name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>25 Jan 2021</strong></td>
+      <td><strong>22 Feb 2021</strong></td>
 	  <td>Mon</td>
-	  <td><strong>DS</strong></td>
+	  <td>PES 1</td>
+	  <td><strong></strong></td>
     </tr>
 	<tr>
-      <td><strong>29 Jan 2021</strong></td>
-	  <td>Fri</td>
-	  <td><strong>COA</strong></td>
+      <td><strong>23 Feb 2021</strong></td>
+	  <td>Tues</td>
+	  <td>PES 2</td>
+	  <td><strong></strong></td>
     </tr>
 	<tr>
-      <td><strong>01 Feb 2021</strong></td>
-	  <td>Mon</td>
-	  <td><strong>TOL</strong></td>
+      <td><strong>24 Feb 2021</strong></td>
+	  <td>Wed</td>
+	  <td>PES 3</td>
+	  <td><strong></strong></td>
     </tr>
 	<tr>
-      <td><strong>08 Feb 2021</strong></td>
-	  <td>Mon</td>
-	  <td><strong>PY</strong></td>
+      <td><strong>25 Feb 2021</strong></td>
+	  <td>Thu</td>
+	  <td>PES 4</td>
+	  <td><strong></strong></td>
     </tr>
     <tr>
-      <td><strong>12 Feb 2021</strong></td>
+      <td><strong>26 Feb 2021</strong></td>
 	  <td>Fri</td>
-	  <td><strong>Maths</strong></td>
+	  <td>PES 5</td>
+	  <td><strong></strong></td>
+    </tr>
+	<tr>
+      <td><strong>27 Feb 2021</strong></td>
+	  <td>Sat</td>
+	  <td>PES 6</td>
+	  <td><strong></strong></td>
     </tr>
   </tbody>
 </table>
