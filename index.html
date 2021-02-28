@@ -38,7 +38,6 @@ var i=0;
 <a class="tablink col-sm-3" onclick="openbatch('34', this, 'red')" id="d">Quiz(Diploma)</a>
 <script>
 function mainexam(){
-	quizzz();
 	var d = new Date();
 	var mon= d.getMonth()
 	var t=d.getHours();
@@ -124,88 +123,8 @@ window.onload = mainexam;
 </div>
 
 <div id="32" class="tabcontent">
-<script>
-function quizzz(){
-	var d2 = new Date();
-	var mon2= d2.getMonth()
-	var t2=d2.getHours();
-	var da2=d2.getDate();
-	//var mon2=1,da2=27,t2=16;
-	var dte2,endt=13,pe1=22,pe2=23,pe3=24,pe4=25,pe5=26,pe6=27;
-	if(mon2==1){
-		if(da2<=pe1){dte2=1;}
-		if((da2==pe1 && t2>=endt)||da2>pe1 && da2<=pe2){dte2=2;}
-		if((da2==pe2 && t2>=endt)||da2>pe2 && da2<=pe3){dte2=3;}
-		if((da2==pe3 && t2>=endt)||da2>pe3 && da2<=pe4){dte2=4;}
-		if((da2==pe4 && t2>=endt)||da2>pe4 && da2<=pe5){dte2=5;}
-		if((da2==pe5 && t2>=endt)||da2>pe5 && da2<=pe6){dte2=6;}
-		if((da2==pe6 && t2>=endt)||da2>pe6){ document.getElementById("tab2").style.display = "none";
-			document.getElementById("finishq").style.display = "inline";
-		}
-	}
-	else{
-		document.getElementById("tab2").style.display = "none";
-		document.getElementById("extrap").style.display = "none";
-			document.getElementById("finishq").style.display = "inline";
-	}
-
-	if(mon2==1){
-	var x2 = document.getElementById("tab2").getElementsByTagName("tr");
-    x2[dte2].classList.add("active");
-	}
-}
-</script>
-<table class="table table-bordered shadow-lg" id="tab2">
-  <thead class="thead-dark">
-	<tr>
-		<th scope="col">Date</th>
-		<th scope="col">Day</th>
-		<th scope="col">Sub Name</th>
-		<th scope="col">Sub Code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>22 Feb 2021</strong></td>
-	  <td>Mon</td>
-	  <td><strong>Maths IV</strong></td>
-	  <td>KAS-302</td>
-    </tr>
-	<tr>
-      <td><strong>23 Feb 2021</strong></td>
-	  <td>Tues</td>
-	  <td><strong>DS</strong></td>
-	  <td>KCS-301</td>
-    </tr>
-	<tr>
-      <td><strong>24 Feb 2021</strong></td>
-	  <td>Wed</td>
-	  <td><strong>UHV</strong></td>
-	  <td>KVE-301</td>
-    </tr>
-	<tr>
-      <td><strong>25 Feb 2021</strong></td>
-	  <td>Thu</td>
-	  <td><strong>TOL</strong></td>
-	  <td>KCS-303</td>
-    </tr>
-    <tr>
-      <td><strong>26 Feb 2021</strong></td>
-	  <td>Fri</td>
-	  <td><strong>COA</strong></td>
-	  <td>KCS-302</td>
-    </tr>
-	<tr>
-      <td><strong>27 Feb 2021</strong></td>
-	  <td>Sat</td>
-	  <td><strong>PY</strong></td>
-	  <td>KNC-302</td>
-    </tr>
-  </tbody>
-</table>
-<p style="font-weight:bold;text-align:center;font-style:italic;" id='extrap'>*Timing of exams is 10:00 AM to 01:00 PM for all subjects</p>
-<div class="text-center" id='finishq'>
-<h2>Weekly Quizzes Finished</p><p>But, Pre End Sem Starting from 22 Feb</p></div>
+<div class="text-center">
+<h2>Pre End Exams Finished <br/>Prepare for Final exams<br/>All the best<br/>Bhagwan bhla kare tumhara</div>
 </div>
 
 <script>
