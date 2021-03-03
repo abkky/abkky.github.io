@@ -62,7 +62,6 @@ function mainexam(){
 	var x = document.getElementById("tab1").getElementsByTagName("tr");
     x[dte].classList.add("active");
 prutor();
-dip();
 	}
 window.onload = mainexam;
 </script>
@@ -190,137 +189,9 @@ function prutor(){
 <h2>Prutor Quizzes Finished</p>
 </div>
 </div>
-
-
-<script>
-function dip(){
-	var d4 = new Date();
-	var mon4= d4.getMonth()
-	var t4=d4.getHours();
-	var da4=d4.getDate();
-	//var mon4=1;
-	//var da4=13;
-	//var t4=14;
-	var endt=10;
-	var dte4;
-	if (mon4==0){
-		if(da4<=20){dte4=3;}
-		if((da4 > 20 && da4 <= 22)||(da4 == 20 && t4 >= endt)){dte4=4;}
-		if((da4>22 && da4<=23)||(da4 == 22 && t4 >= endt)){dte4=5;}
-		if((da4>23 && da4<=25)||(da4 == 23 && t4 >= endt)){dte4=6;}
-		if((da4>25 && da4<=31)||(da4 == 25 && t4 >= endt)){dte4=7;}
-		if(da4 == 31 && t4 >= 14){dte4=8;}
-	}
-	else if(mon4==1){
-		if(da4<=3){dte4=8;}
-		if((da4>3 && da4<=5)||(da4 == 3 && t4 >= endt)){dte4=9;}
-		if((da4>5 && da4<=6)||(da4 == 5 && t4 >= endt)){dte4=10;}
-		if((da4>6 && da4<=10)||(da4 == 6 && t4 >= endt)){dte4=11;}
-		if((da4>10 && da4<=14)||(da4 == 10 && t4 >= endt)){dte4=12;}
-		if(da4>14 ||(da4 == 13 && t4 >= endt)){
-		document.getElementById("tab4").style.display = "none";
-			document.getElementById("finishdp").style.display = "inline";
-		}
-		
-	}
-	if(mon4==0 ||(mon4==1&&da4<=14)){
-	var x4 = document.getElementById("tab4").getElementsByTagName("tr");
-    x4[dte4].classList.add("active");
-	}
-	var ran = Math.floor((Math.random() * 10) + 1);
-	if ((ran==6)||(ran==9)){document.getElementById("fck").style.display = "inline";}
-	setTimeout(removesr, 1000);
-}
-function removesr(){
-	document.getElementById("fck").style.display = "none";
-}
-</script>
 <div id="34" class="tabcontent">
-  <table class="table my-2 table-bordered shadow-lg" id="tab4">
-  <thead class="thead-dark">
- <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Day</th>
-	  <th scope="col">Sub</th>
-	  <th scope="col">Quiz No.</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>13 Jan</th>
-	  <td>Wed</td>
-	  <td><strong>COA</strong></td>
-	  <td>1</td>
-    </tr>
-      <tr>
-      <th>17 Jan</th>
-	  <td>Sun</td>
-	  <td><strong>Maths</strong></td>
-	  <td>1</td>
-    </tr>
-	<tr>
-      <th>20 Jan</th>
-	  <td>Wed</td>
-	  <td><strong>PY</strong></td>
-	  <td>1</td>
-    </tr>
-	<tr>
-      <th>22 Jan</th>
-	  <td>Fri</td>
-	  <td><strong>TOL</strong></td>
-	  <td>1</td>
-    </tr>
-	<tr>
-      <th>23 Jan</th>
-	  <td>Sat</td>
-	  <td><strong>UHV</strong></td>
-	  <td>1</td>
-    </tr>
-	<tr>
-      <th>27 Jan</th>
-	  <td>Wed</td>
-	  <td><strong>DS</strong></td>
-	  <td>1</td>
-    </tr>
-	<tr>
-      <th>31 Jan</th>
-	  <td>Sun</td>
-	  <td><strong>Maths</strong></td>
-	  <td>2</td>
-    </tr>
-		<tr>
-      <th>03 Feb</th>
-	  <td>Wed</td>
-	  <td><strong>PY</strong></td>
-	  <td>2</td>
-    </tr>
-	<tr>
-      <th>05 Feb</th>
-	  <td>Fri</td>
-	  <td><strong>COA</strong></td>
-	  <td>2</td>
-    </tr>
-	<tr>
-      <th>06 Feb</th>
-	  <td>Sat</td>
-	  <td><strong>UHV</strong></td>
-	  <td>2</td>
-    </tr>
-	<tr>
-      <th>10 Feb</th>
-	  <td>Wed</td>
-	  <td><strong>TOL</strong></td>
-	  <td>2</td>
-    </tr>
-	<tr>
-      <th>13 Feb</th>
-	  <td>Sat</td>
-	  <td><strong>DS</strong></td>
-	  <td>2</td>
-    </tr>
-  </tbody>
-</table>
-<div class="text-center" id='finishdp'>
+
+<div class="text-center">
 <h2><ul style="list-style:none;"><li>Special Quizzes finished but,</li><li>Pre End Sem Exam Left</li><li>End Sem Exam Left</li></ul></h2>
 </div >
 <div  class="text-center" id='fck'>
