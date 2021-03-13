@@ -207,11 +207,13 @@ function practicals(){
 		if((da4==23 && t4>=endt)||da4>23 && da4<=24 ){dte4=2;}
 		if((da4==24 && t4>=endt)||da4>24 && da4<=25 ){dte4=3;}
 		if((da4==25 && t4>=endt)||da4>25){ document.getElementById("tab4").style.display = "none";
+			document.getElementById("pofpract").style.display = "none";
 			document.getElementById("finishd").style.display = "inline";
 		}
 	}
 	else{
 	document.getElementById("tab4").style.display = "none";
+	document.getElementById("pofpract").style.display = "none";
 			document.getElementById("finishd").style.display = "inline";
 	}
 	var x4 = document.getElementById("tab4").getElementsByTagName("tr");
@@ -227,6 +229,7 @@ function practicals(){
 	<th scope="col">Sub Code</th>
       <th scope="col">Date</th>
       <th scope="col">Lab No.</th>
+      <th scope="col">Faculty</th>
     </tr>
   </thead>
   <tbody>
@@ -235,21 +238,25 @@ function practicals(){
 	  <td>KCS-352</td>
       <td><strong>23 March 2021</strong></td>
 	  <td><strong>G-305, 306, 307, 308</strong></td>
+	  <td>Mr. Sandeep Kumar Dubey </td>
     </tr>
     <tr>
       <th>TOL</th>
 	  <td>KNC-353</td>
       <td><strong>24 March 2021</strong></td>
 	  <td><strong>G-305, 306, 307, 308</strong></td>
+	  <td>Mr. Umesh Pratap Singh</td>
     </tr>
 	<tr>
       <th>DSUC</th>
 	  <td>KCS-351</td>
       <td><strong>We're too High, can't Decide</strong></td>
 	  <td><strong>G-305, 306, 307, 308</strong></td>
+	  <td>Mr. Raghvendra Singh, Mr. Amit Pandey</td>
     </tr>
   </tbody>
 </table>
+<p style="font-weight:bold;text-align:center;font-style:italic;" id='pofpract'>*Only for Lateral Entry Students</p>
 <div id="finishd">
 	<h2 class="text-center">Congratulations! Semester III Ended </h2>
 	<p class="text-center">Next Semester Starting Soon</p>
