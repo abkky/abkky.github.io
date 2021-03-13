@@ -32,10 +32,12 @@ var i=0;
 <div class='row'>
 	<div id="show-hidden-menu" class='btn-lg btn-dark text-center col-sm-2' style='color:white;background-color:#212529;'>Show/Hide notices</div>
 </div><br/>
+<p class="text-center" style="font-size:8px;"><i><strong>Disclaimer-</strong>We were too high while creating thi site</i></p>
+<br/>
 <a class="tablink col-sm-3" onclick="openbatch('31', this, 'red')" id="a">END SEM</a>
 <a class="tablink col-sm-3" onclick="openbatch('32', this, 'red')" id="b">PRE END SEM</a>
 <a class="tablink col-sm-3" onclick="openbatch('33', this, 'red')" id="c">Prutor</a>
-<a class="tablink col-sm-3" onclick="openbatch('34', this, 'red')" id="d">Quiz(Diploma)</a>
+<a class="tablink col-sm-3" onclick="openbatch('34', this, 'red')" id="d">Practical Exams</a>
 <script>
 function mainexam(){
 	var d = new Date();
@@ -116,8 +118,8 @@ window.onload = mainexam;
 </table>
 <p style="font-weight:bold;text-align:center;font-style:italic;" id='pofexam'>*Timing of exams is 02:00 PM to 05:00 PM for all subjects</p>
 <div id="finishe">
-	<h2 class="text-center">Enjoy!!Exams Finished</h2>
-	<p class="text-center">Next Semester Starting Soon</p>
+	<h2 class="text-center">Enjoy!!Exams Finished & Practical's starting from 23 March</h2>
+	<p class="text-center">Next Semester Soon, Until your khatma</p>
 </div>
 </div>
 
@@ -155,6 +157,7 @@ function prutor(){
 	var x3 = document.getElementById("tab3").getElementsByTagName("tr");
     x3[dte3].classList.add("active");
 	}
+	practicals();
 }
 
 </script>
@@ -190,10 +193,67 @@ function prutor(){
 </div>
 </div>
 <div id="34" class="tabcontent">
+<script>
+function practicals(){
+	var d4 = new Date();
+	var mon4= d4.getMonth()
+	var t4=d4.getHours();
+	var da4=d4.getDate();
+	//var mon4=2,da4=25,t4=16;
+	var dte4;
+	endt=17;
+	if(mon4==2){
+		if(da4<=23){dte4=1;}
+		if((da4==23 && t4>=endt)||da4>23 && da4<=24 ){dte4=2;}
+		if((da4==24 && t4>=endt)||da4>24 && da4<=25 ){dte4=3;}
+		if((da4==25 && t4>=endt)||da4>25){ document.getElementById("tab4").style.display = "none";
+			document.getElementById("finishd").style.display = "inline";
+		}
+	}
+	else{
+	document.getElementById("tab4").style.display = "none";
+			document.getElementById("finishd").style.display = "inline";
+	}
+	var x4 = document.getElementById("tab4").getElementsByTagName("tr");
+    x4[dte4].classList.add("active");
+	
+}
 
-<div class="text-center">
-<h2><ul style="list-style:none;"><li>Special Quizzes finished but,</li><li>Pre End Sem Exam Left</li><li>End Sem Exam Left</li></ul></h2>
-</div >
+</script>
+<table class="table table-bordered shadow-lg" id="tab4">
+  <thead class="thead-dark">
+      <tr>
+	<th scope="col">Sub Name</th>
+	<th scope="col">Sub Code</th>
+      <th scope="col">Date</th>
+      <th scope="col">Lab No.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>COA</th>
+	  <td>KCS-352</td>
+      <td><strong>23 March 2021</strong></td>
+	  <td><strong>G-305, 306, 307, 308</strong></td>
+    </tr>
+    <tr>
+      <th>TOL</th>
+	  <td>KNC-353</td>
+      <td><strong>24 March 2021</strong></td>
+	  <td><strong>G-305, 306, 307, 308</strong></td>
+    </tr>
+	<tr>
+      <th>DSUC</th>
+	  <td>KCS-351</td>
+      <td><strong>We're too High, can't Decide</strong></td>
+	  <td><strong>G-305, 306, 307, 308</strong></td>
+    </tr>
+  </tbody>
+</table>
+<div id="finishd">
+	<h2 class="text-center">Congratulations! Semester III Ended </h2>
+	<p class="text-center">Next Semester Starting Soon</p>
+</div>
 <div  class="text-center" id='fck'>
 <p>Life may end but your quizzes, tutorials are never gonna end at SRMXEM</p></div>
 </div>
