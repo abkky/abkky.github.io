@@ -199,14 +199,13 @@ function practicals(){
 	var mon4= d4.getMonth()
 	var t4=d4.getHours();
 	var da4=d4.getDate();
-	//var mon4=2,da4=25,t4=16;
+	var mon4=2,da4=23,t4=16;
 	var dte4;
 	endt=17;
 	if(mon4==2){
 		if(da4<=23){dte4=1;}
 		if((da4==23 && t4>=endt)||da4>23 && da4<=24 ){dte4=2;}
-		if((da4==24 && t4>=endt)||da4>24 && da4<=25 ){dte4=3;}
-		if((da4==25 && t4>=endt)||da4>25){ document.getElementById("tab4").style.display = "none";
+		if((da4==24 && t4>=endt)||da4>=25){ document.getElementById("tab4").style.display = "none";
 			document.getElementById("pofpract").style.display = "none";
 			document.getElementById("finishd").style.display = "inline";
 		}
@@ -217,7 +216,10 @@ function practicals(){
 			document.getElementById("finishd").style.display = "inline";
 	}
 	var x4 = document.getElementById("tab4").getElementsByTagName("tr");
-    x4[dte4].classList.add("active");
+	x4[dte4+1].classList.add("active");
+	if (dte4==1){
+		x4[dte4].classList.add("active");
+	}	
 	
 }
 
@@ -233,6 +235,13 @@ function practicals(){
     </tr>
   </thead>
   <tbody>
+  <tr>
+      <th>DSUC</th>
+	  <td>KCS-351</td>
+      <td><strong>23 March 2021</strong></td>
+	  <td><strong>G-305, 306, 307, 308</strong></td>
+	  <td>Mr. Raghvendra Singh, Mr. Amit Pandey</td>
+    </tr>
     <tr>
       <th>COA</th>
 	  <td>KCS-352</td>
@@ -246,13 +255,6 @@ function practicals(){
       <td><strong>24 March 2021</strong></td>
 	  <td><strong>G-305, 306, 307, 308</strong></td>
 	  <td>Mr. Umesh Pratap Singh</td>
-    </tr>
-	<tr>
-      <th>DSUC</th>
-	  <td>KCS-351</td>
-      <td><strong>We're too High, can't Decide</strong></td>
-	  <td><strong>G-305, 306, 307, 308</strong></td>
-	  <td>Mr. Raghvendra Singh, Mr. Amit Pandey</td>
     </tr>
   </tbody>
 </table>
