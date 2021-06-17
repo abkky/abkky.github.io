@@ -1,356 +1,632 @@
-<html>  
+<!DOCTYPE html>
+<html>
+
 <head>
-<title>Khatme.tk | Until your Khatma</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="images/logo.png" type="image/png">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="css/style.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Khatme.tk</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  <style>
+    .activem {
+      background: linear-gradient(269deg, #000000, #ff0000, #000000);
+      background-size: 400% 600%;
+      -webkit-animation: activeAnmi 3s ease infinite;
+      -moz-animation: activeAnmi 3s ease infinite;
+      animation: activeAnmi 3s ease infinite;
+      color: white;
+      z-index: 10;
+    }
 
-<script>
-$(document).ready(function() {
-var i=0;
-  $('#show-hidden-menu').click(function() {
-    $('.hidden-menu').slideToggle("slow");
-	if(i==0){
-          $(this).css("background-color", "red");
-          i=1;
+    @-webkit-keyframes activeAnmi {
+      0% {
+        background-position: 31% 0%;
       }
-      else{
-          $(this).css("background-color", "#212529"); 
-          i=0; 
+
+      50% {
+        background-position: 70% 100%;
       }
-  });
-});
-</script>
+
+      100% {
+        background-position: 31% 0%;
+      }
+    }
+
+    @-moz-keyframes activeAnmi {
+      0% {
+        background-position: 31% 0%;
+      }
+
+      50% {
+        background-position: 70% 100%;
+      }
+
+      100% {
+        background-position: 31% 0%;
+      }
+    }
+
+    @keyframes activeAnmi {
+      0% {
+        background-position: 31% 0%;
+      }
+
+      50% {
+        background-position: 70% 100%;
+      }
+
+      100% {
+        background-position: 31% 0%;
+      }
+    }
+
+    .tabs .tab a {
+      color: red;
+    }
+
+    .tabs .tab a.active {
+      color: red;
+    }
+
+    .tabs .tab a:hover {
+      color: red;
+    }
+
+    .tabs .tab a:focus {
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+
+    .tabs .tab a:focus.active {
+      background-color: rgba(255, 0, 0, 0.1);
+    }
+
+    .tabs .indicator {
+      background-color: red;
+    }
+
+    #finishq {
+      display: none;
+    }
+
+    .head1 {
+      font-weight: bold;
+      color: red;
+    }
+
+    /* #tab4 tr td:hover {
+      background: rgba(252, 113, 113, 0.199);
+    } */
+
+    table {
+      text-align: center;
+      border: 0.5px solid #111;
+      margin: auto;
+    }
+
+    table td {
+      border: 1px solid #e9e9e9;
+    }
+
+    table tr {
+      transition: 1.5s ease;
+    }
+  </style>
 </head>
-<body> 
-<p> hello</p>
-<h1 class='text-center p-3 m-0'><span class="head1">Quiz/Exams</span> Schedules</h1> 
-<div class='row'>
-	<div id="show-hidden-menu" class='btn-lg btn-dark text-center col-sm-2' style='color:white;background-color:#212529;'>Show/Hide notices</div>
-</div><br/>
-<p class="text-center" style="font-size:8px;"><i><strong>Disclaimer-</strong>We were too high while creating thi site</i></p>
-<br/>
-<a class="tablink col-sm-3" onclick="openbatch('31', this, 'red')" id="a">END SEM</a>
-<a class="tablink col-sm-3" onclick="openbatch('32', this, 'red')" id="b">PRE END SEM</a>
-<a class="tablink col-sm-3" onclick="openbatch('33', this, 'red')" id="c">Prutor</a>
-<a class="tablink col-sm-3" onclick="openbatch('34', this, 'red')" id="d">Practical Exams</a>
-<script>
-function mainexam(){
-	var d = new Date();
-	var mon= d.getMonth()
-	var t=d.getHours();
-	var	da=d.getDate();
-	//var mon=2, da=22,t=16;
-	var dte,endt=17,e1=9,e2=12,e3=15,e4=17,e5=19,e6=22;
-	if(mon==2){
-		if(da<=e1){dte=1;}
-		if((da==e1 && t>=endt)||da>e1 && da<=e2){dte=2}
-		if((da==e2 && t>=endt)||da>e2 && da<=e3){dte=3}
-		if((da==e3 && t>=endt)||da>e3 && da<=e4){dte=4}
-		if((da==e4 && t>=endt)||da>e4 && da<=e5){dte=5}
-		if((da==e5 && t>=endt)||da>e5 && da<=e6){dte=6}
-		if((da==e6 && t>=endt)||da>e6){ document.getElementById("tab1").style.display = "none";
-			document.getElementById("pofexam").style.display = "none";
-			document.getElementById("finishe").style.display = "inline";
-		}
-	}
-	else{
-		dte=1;
-	}
-	var x = document.getElementById("tab1").getElementsByTagName("tr");
-    x[dte].classList.add("active");
-prutor();
-	}
-window.onload = mainexam;
-</script>
-<div id="31" class="tabcontent">
-<table class="table table-bordered shadow-lg" id="tab1">
-  <thead class="thead-dark">
-      <tr>
-	<th scope="col">Sub Name</th>
-	<th scope="col">Sub Code</th>
-      <th scope="col">Date</th>
-      <th scope="col">Day</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Maths</th>
-	  <td>KAS-302</td>
-      <td><strong>09 March 2021</strong></td>
-	  <td>Tues</td>
-    </tr>
-    <tr>
-      <th>Py</th>
-	  <td>KNC-302</td>
-      <td><strong>12 March 2021</strong></td>
-	  <td>Fri</td>
-    </tr>
-	<tr>
-      <th>COA</th>
-	  <td>KCS-302</td>
-      <td><strong>15 March 2021</strong></td>
-	  <td>Mon</td>
-    </tr>
-	<tr>
-      <th>UHV</th>
-	  <td>KVE-301</td>
-      <td><strong>17 March 2021</strong></td>
-	  <td>Wed</td>
-    </tr>
-	<tr>
-      <th>TOL</th>
-	  <td>KCS-303</td>
-      <td><strong>19 March 2021</strong></td>
-	  <td>Fri</td>
-    </tr>
-	<tr>
-      <th>DS</th>
-	  <td>KCS-301</td>
-      <td><strong>22 March 2021</strong></td>
-	  <td>Mon</td>
-    </tr>
-  </tbody>
-</table>
-<p style="font-weight:bold;text-align:center;font-style:italic;" id='pofexam'>*Timing of exams is 02:00 PM to 05:00 PM for all subjects</p>
-<div id="finishe">
-	<h2 class="text-center">Enjoy!!Exams Finished & Practical's starting from 23 March</h2>
-	<p class="text-center">Next Semester Soon, Until your khatma</p>
-</div>
-</div>
 
-<div id="32" class="tabcontent">
-<div class="text-center">
-<h2>Pre End Exams Finished <br/>Prepare for Final exams<br/>All the best<br/>Bhagwan bhla kare tumhara</div>
-</div>
+<body>
+  <div class="container">
+    <h3 class="center"><span class="head1">Quiz/Exams</span> Schedules</h3>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs z-depth-1">
+          <li class="tab col s3">
+            <a href="#quiz" id="#a">Quiz</a>
+          </li>
+          <li class="tab col s3"><a href="#prutor" id="b">Prutor</a></li>
+          <li class="tab col s3"><a href="#preend" id="c">Pre End</a></li>
+          <li class="tab col s3"><a href="#tt45" id="c"  class="active">Time Table(45)</a></li>
+        </ul>
+      </div>
 
-<script>
-function prutor(){
-	var d3 = new Date();
-	var mon3= d3.getMonth()
-	var t3=d3.getHours();
-	var da3=d3.getDate();
-	//var mon3=1,da3=30,t3=16;
-	var dte3;
-	if (mon3==0){
-		if(da3<=21){dte3=1;}
-	}
-	else if(mon3==1){
-		if(da3<=16){dte3=1;}
-		if((da3==22&&t3>=17)||da3>=22){dte3=2;}
-	}
-	else if(mon3==2){
-		if(da3<=2){dte3=2;}
-		if((da3==2&&t3>=17)||da3>=3){ document.getElementById("tab3").style.display = "none";
-			document.getElementById("finishp").style.display = "inline";
-		}
-	}
-	else{
-	document.getElementById("tab3").style.display = "none";
-			document.getElementById("finishp").style.display = "inline";
-	}
-	if(mon3==0 || mon3==1 ||(mon3==2 && da3<=2)){
-	var x3 = document.getElementById("tab3").getElementsByTagName("tr");
-    x3[dte3].classList.add("active");
-	}
-	practicals();
-}
+      <script>
+        function quiz() {
+          var d = new Date();
+          var mon = d.getMonth();
+          var t = d.getHours();
+          var da = d.getDate();
+          // var mon=7;
+          // var da=16;
+          // var t=10;
+          var endt = 10;
+          var dte;
+          // alert(da)
+          if (mon == 5) {
+            if (da <= 11) {
+              dte = 1;
+            }
+            if (da == 11 && t >= endt || da > 11 && da <= 14) { dte = 2 };
+            if (da == 14 && t >= endt || da > 14 && da <= 18) { dte = 3 };
+            if (da == 18 && t >= endt || da > 18 && da <= 21) { dte = 4 };
+            if (da == 21 && t >= endt || da > 21 && da <= 25) { dte = 5 };
+            if (da == 25 && t >= endt || da > 25 && da <= 28) { dte = 6 };
+            if (da == 28 && t >= endt || da > 28) { dte = 7 };
+          }
+          else if (mon == 6) {
+            if (da <= 2) {
+              dte = 7;
+            }
+            if (da == 2 && t >= endt || da > 2 && da <= 5) { dte = 8 };
+            if (da == 5 && t >= endt || da > 5 && da <= 9) { dte = 9 };
+            if (da == 9 && t >= endt || da > 9 && da <= 12) { dte = 10 };
+            if (da == 12 && t >= endt || da > 12 && da <= 14) { dte = 11 };
+            if (da == 14 && t >= endt || da > 14 && da <= 16) { dte = 12 };
+            if (da == 16 && t >= endt || da > 16) {
+              document.getElementById("tab1").style.display = "none";
+              document.getElementById("finishq").style.display = "inline";
+            }
+          }
+          else {
+            document.getElementById("tab1").style.display = "none";
+            document.getElementById("finishq").style.display = "inline";
+          }
+          var x = document.getElementById("tab1").getElementsByTagName("tr");
+          x[dte].classList.add("activem");
+        }
+        window.onload = quiz;
+      </script>
+      <div id="quiz" class="col s12">
+        <br />
+        <table class="highlight centered z-depth-1" id="tab1">
+          <thead class="">
+            <tr class="black white-text">
+              <th scope="col">Date</th>
+              <th scope="col">Sub</th>
+              <th scope="col">Day</th>
+              <th scope="col">Subject Code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>11 May 2021</td>
+              <td>TC</td>
+              <td>Fri</td>
+              <td>KAS-401</td>
+            </tr>
+            <tr>
+              <td>14 May 2021</td>
+              <td>OS</td>
+              <td>Mon</td>
+              <td>KCS-401</td>
+            </tr>
+            <tr>
+              <td>18 May 2021</td>
+              <td>TAFL</td>
+              <td>Fri</td>
+              <td>KCS-402</td>
+            </tr>
+            <tr>
+              <td>21 May 2021</td>
+              <td>MP</td>
+              <td>Mon</td>
+              <td>KCS-403</td>
+            </tr>
+            <tr>
+              <td>25 May 2021</td>
+              <td>CSS</td>
+              <td>Fri</td>
+              <td>KNC-401</td>
+            </tr>
+            <tr>
+              <td>28 May 2021</td>
+              <td>Elective</td>
+              <td>Mon</td>
+              <td>KOE-4X</td>
+            </tr>
+            <tr>
+              <td>02 July 2021</td>
+              <td>TC</td>
+              <td>Fri</td>
+              <td>KAS-401</td>
+            </tr>
+            <tr>
+              <td>05 July 2021</td>
+              <td>OS</td>
+              <td>Mon</td>
+              <td>KCS-401</td>
+            </tr>
+            <tr>
+              <td>09 July 2021</td>
+              <td>TAFL</td>
+              <td>Fri</td>
+              <td>KCS-402</td>
+            </tr>
+            <tr>
+              <td>12 July 2021</td>
+              <td>MP</td>
+              <td>Mon</td>
+              <td>KCS-403</td>
+            </tr>
+            <tr>
+              <td>14 July 2021</td>
+              <td>CSS</td>
+              <td>Wed</td>
+              <td>KNS-401</td>
+            </tr>
+            <tr>
+              <td>16 July 2021</td>
+              <td>Elective</td>
+              <td>Fri</td>
+              <td>KOE-4X</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="center-align" id='finishq'>
+          <div class="col s12">
+            <div class="card">
+              <h5 class="flow-text card-content">Weekly Quizzes finished<br /><br />
+                <p>But, Pre End Sem Starting from 19 July</p>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="prutor" class="col s12">
+        <br />
+        <table class="responsive-table highlight centered z-depth-1" id="tab2">
+          <thead>
+            <tr class="black white-text">
+              <th scope="col">Quiz No.</th>
+              <th scope="col">Quiz</th>
+              <th scope="col">Start</th>
+              <th scope="col">End</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Quiz 1</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>14-Apr-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>04-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 2</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>19-Apr-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>04-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 3</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>28-Apr-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>04-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 4</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>28-Apr-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>04-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 5</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>12-May-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>04-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 6</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>12-May-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>04-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr class="activem">
+              <td>Quiz 7</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>26-May-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>22-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr class="activem">
+              <td>Quiz 8</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>26-May-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>22-Jun-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 9</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>23-Jun-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>06-July-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>Quiz 10</td>
+              <td>
+                Computer System Security(AKTU)
+              </td>
+              <td>
+                <strong>23-Jun-2021 - 12:00 AM</strong>
+              </td>
+              <td>
+                <strong>06-July-2021 - 05:00PM</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="preend" class="col s12">
+        <br />
+        <table class="highlight centered z-depth-1" id="tab3">
+          <thead>
+            <tr class="white-text black">
+              <th scope="col">Date</th>
+              <th scope="col">Day</th>
+              <th scope="col">Sub Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>19 July 2021</strong></td>
+              <td>Mon</td>
+              <td><strong>PES 1</strong></td>
+            </tr>
+            <tr>
+              <td><strong>22 July 2021</strong></td>
+              <td>Thus</td>
+              <td><strong>PES 2</strong></td>
+            </tr>
+            <tr>
+              <td><strong>23 July 2021</strong></td>
+              <td>Fri</td>
+              <td><strong>PES 3</strong></td>
+            </tr>
+            <tr>
+              <td><strong>26 July 2021</strong></td>
+              <td>Mon</td>
+              <td><strong>PES 4</strong></td>
+            </tr>
+            <tr>
+              <td><strong>28 July 2021</strong></td>
+              <td>Wed</td>
+              <td><strong>PES 5</strong></td>
+            </tr>
+            <tr>
+              <td><strong>30 July 2021</strong></td>
+              <td>Fri</td>
+              <td><strong>PES 6</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <script>
+        var os="https://zoom.us/j/8384171549?pwd=cks0bWtHOEJRaTFiMmJGemc1K3FpZz09";
+        var tc="https://zoom.us/j/3836121687?pwd=Sy9FdEorQks4V3RkNjZ4alVDdTh2dz09";
+        var css="https://us04web.zoom.us/j/2273977497?pwd=NnN5Mlo5VUpYUEczSjZzZXJpdWNrQT09";
+        var mp="https://us04web.zoom.us/j/4234459260?pwd=N1ZsUGdXYmFWZnVCTzIvUmVnbDBSdz09";
+        var tafl="https://us04web.zoom.us/j/9313536859?pwd=NDdNV2xycGlBYUU3NVdsS3BmalU2Zz09";
+        var ese="https://us05web.zoom.us/j/4897271520?pwd=QlVnMEJGVzA2OGdQSllhMEdidGFSZz09";
+        var los="https://zoom.us/j/5687381032?pwd=V0E4aXlkeXNBei9LTmR0S00vdnhxdz09";
+        var lmp="https://us04web.zoom.us/j/4234459260?pwd=N1ZsUGdXYmFWZnVCTzIvUmVnbDBSdz09";
+        var lpy="https://us04web.zoom.us/j/6752005635?pwd=NVkrSkF0RWNaOWxVWm9HTHIrNmlIQT09";
+        function cos(){window.open(os);}
+        function ctc(){window.open(tc);}
+        function ccss(){window.open(css);}
+        function cmp(){window.open(mp);}
+        function ctafl(){window.open(tafl);}
+        function cese(){window.open(ese);}
+        function clos(){window.open(los);}
+        function clmp(){window.open(lmp);}
+        function clpy(){window.open(lpy);}
+        function gcred(){window.open("https://classroom.google.com/a/not-turned-in/all");}
+        </script>
+      <div id="tt45" class="col s12"><br />
+        <table class="centered z-depth-1" id="tab4">
+          <thead>
+            <tr class="black white-text">
+              <th scope="col">45</th>
+              <th scope="col">09:00-<br />10:00</th>
+              <th scope="col">10:00-<br />11:00</th>
+              <th scope="col">11:00-<br />12:00</th>
+              <th scope="col">12:00-<br />12:55</th>
+              <th scope="col">12:55-<br />01:35</th>
+              <th scope="col">01:35-<br />02:25</th>
+              <th scope="col">02:25-<br />03:15</th>
+              <th scope="col">03:15-<br />04:05</th>
+              <th scope="col">04:05-<br />04:55</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mon</strong></td>
+              <td onclick="gcred()">QUIZ&#128534</td>
+              <td onclick="ctafl()">TAFL</td>
+              <td onclick="cese()">ESE&#128531</td>
+              <td onclick="cmp()">MP</td>
+              <td rowspan="6" style="vertical-align:middle;"><span id="luncht"
+                  style='writing-mode: vertical-lr;font-size:40px;font-weight:900;transform:rotate(180deg);'>LUNCH</span>
+              </td>
+              <td onclick="cos()">OS&#128578</td>
+              <td onclick="ctc()">TC</td>
+              <td colspan="2">--</td>
 
-</script>
-<div id="33" class="tabcontent">
-  <table class="table table-bordered shadow-lg" id="tab3">
-  <thead class="thead-dark">
-      <tr>
-	<th scope="col">Quiz No.</th>
-	<th scope="col">Quiz</th>
-      <th scope="col">Start</th>
-      <th scope="col">End</th>
-    </tr>
-  </thead>
-  <tbody>
-     <tr>
-      <th>Quiz 10</th>
-	  <td>Python Programming <br/> A Practical Approach (AKTU)</td>
-	  <td><strong>11-Jan-2021<br/>17:00 (05:00PM)</strong></td>
-	  <td><strong>22-Feb-2021 <br/>17:00 (05:00PM)</strong></td>
-	  
-    </tr>
-    <tr>
-      <th>Quiz 11</th>
-	  <td>Python Programming <br/> A Practical Approach (AKTU)</td>
-	  <td><strong>23-Feb-2021<br/>17:00 (05:00PM)</strong></td>
-	  <td><strong>02-March-2021 <br/>17:00 (05:00PM)</strong></td>
-	  
-    </tr>
-  </tbody>
-</table> 
-<div class="text-center" id='finishp'>
-<h2>Prutor Quizzes Finished</p>
-</div>
-</div>
-<div id="34" class="tabcontent">
-<script>
-function practicals(){
-	var d4 = new Date();
-	var mon4= d4.getMonth()
-	var t4=d4.getHours();
-	var da4=d4.getDate();
-	var mon4=2,da4=23,t4=16;
-	var dte4;
-	endt=17;
-	if(mon4==2){
-		if(da4<=23){dte4=1;}
-		if((da4==23 && t4>=endt)||da4>23 && da4<=24 ){dte4=2;}
-		if((da4==24 && t4>=endt)||da4>=25){ document.getElementById("tab4").style.display = "none";
-			document.getElementById("pofpract").style.display = "none";
-			document.getElementById("finishd").style.display = "inline";
-		}
-	}
-	else{
-	document.getElementById("tab4").style.display = "none";
-	document.getElementById("pofpract").style.display = "none";
-			document.getElementById("finishd").style.display = "inline";
-	}
-	var x4 = document.getElementById("tab4").getElementsByTagName("tr");
-	x4[dte4+1].classList.add("active");
-	if (dte4==1){
-		x4[dte4].classList.add("active");
-	}	
-	
-}
+            </tr>
+            <tr>
+              <td scope="row"><strong>Tues</strong></td>
+              <td onclick="cmp()">MP</td>
+              <td onclick="cos()">OS&#128578</td>
+              <td onclick="ctc()">TC</td>
+              <td onclick="ctafl()">TAFL</td>
+              <td onclick="ccss()">CSS</td>
+              <td onclick="cese()">T-ESE&#128531</td>
+              <td colspan="2">--</td>
+            </tr>
+            <tr>
+              <td scope="row"><strong>Wed</strong></td>
+              <td onclick="cmp()">MP</td>
+              <td onclick="ccss()">CSS</td>
+              <td onclick="cese()">ESE&#128531</td>
+              <td onclick="cos()">OS&#128578</td>
+              <td onclick="">-</td>
+              <td onclick="ctc()">T-TC</td>
+              <td onclick="clos()" colspan="2">L-OS</td>
 
-</script>
-<table class="table table-bordered shadow-lg" id="tab4">
-  <thead class="thead-dark">
-      <tr>
-	<th scope="col">Sub Name</th>
-	<th scope="col">Sub Code</th>
-      <th scope="col">Date</th>
-      <th scope="col">Lab No.</th>
-      <th scope="col">Faculty</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-      <th>DSUC</th>
-	  <td>KCS-351</td>
-      <td><strong>23 March 2021</strong></td>
-	  <td><strong>G-305, 306, 307, 308</strong></td>
-	  <td>Mr. Raghvendra Singh, Mr. Amit Pandey</td>
-    </tr>
-    <tr>
-      <th>COA</th>
-	  <td>KCS-352</td>
-      <td><strong>23 March 2021</strong></td>
-	  <td><strong>G-305, 306, 307, 308</strong></td>
-	  <td>Mr. Sandeep Kumar Dubey </td>
-    </tr>
-    <tr>
-      <th>TOL</th>
-	  <td>KNC-353</td>
-      <td><strong>24 March 2021</strong></td>
-	  <td><strong>G-305, 306, 307, 308</strong></td>
-	  <td>Mr. Umesh Pratap Singh</td>
-    </tr>
-  </tbody>
-</table>
-<p style="font-weight:bold;text-align:center;font-style:italic;" id='pofpract'>*Only for Lateral Entry Students</p>
-<div id="finishd">
-	<h2 class="text-center">Congratulations! Semester III Ended </h2>
-	<p class="text-center">Next Semester Starting Soon</p>
-</div>
-<div  class="text-center" id='fck'>
-<p>Life may end but your quizzes, tutorials are never gonna end at SRMXEM</p></div>
-</div>
-<script>
-function openbatch(batchname,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(batchname).style.display = "block";
-  elmnt.style.backgroundColor = color;
-  localStorage.setItem("group",batchname);
-}
-var group = localStorage.getItem("group");
-var tabid,tday,tlect;
-var tabid,tday,tlect;
-if(group==31){
-	document.getElementById("a").click();
-	tabid='tab1';
-}
-else if(group==32){
-	document.getElementById("b").click();
-	tabid='tab2';
-}
-else if(group==33){
-	document.getElementById("c").click();
-	tabid='tab4';
-}
-else if(group==34){
-	document.getElementById("d").click();
-	tabid='tab4';
-}
-else{
-	document.getElementById("a").click();
-	tabid='tab1';
-}
-</script>
-<div class="hidden-menu" style="display: none;">
-<h1 class='text-center p-3 m-0'><span class="head1">Notices</span> </h1> 
-<div class="content">
-<table class="table table-bordered shadow-lg" id="tab1">
-  <thead class="thead-dark">
-      <tr>
-	  <th>S.No.</th>
-	<th scope="col">Regarding</th>
-	<th scope="col">Updated</th>
-	<th scope="col">From</th>
-	<th scope="col">View</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-		<td>1</td>
-		<td><strong>Revised Datesheet AKTU</strong></td>
-		<td>12-Feb-2021</td>
-		<td>AKTUx</td>
-		<td><a class='btn btn-dark' target="blank"href="https://erp.aktu.ac.in/Attachments/Circular/17213czdxcxla.pdf">View</a></td>
-    </tr>
-  <tr>
-		<td>2</td>
-		<td><strong>Regarding PRE END EXAM</strong></td>
-		<td>12-Feb-2021</td>
-		<td>SRMXEM</td>
-		<td><a class='btn btn-dark' target="blank"href="resources/srmcem1.pdf">View</a></td>
-    </tr>
-    <tr>
-		<td>3</td>
-		<td><strong>Last date of enrollment form session 2020-21</strong></td>
-		<td>10-Feb-2021</td>
-		<td>AKTUx</td>
-		<td><a class='btn btn-dark' target="blank"href="https://erp.aktu.ac.in/Attachments/Circular/171951fbcxsqj.pdf">View</a></td>
-    </tr>
-	<tr>
-		<td>4</td>
-		<td><strong>Notice Examination for End Sem Exam Centre</strong></td>
-		<td>01-Feb-2021</td>
-		<td>SRMXEM</td>
-		<td><a class='btn btn-dark' target="blank"href="http://srmcem.ac.in/pdf/Notice%20Examination.pdf">View</a></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-</body>  
-</html> 
+            </tr>
+            <tr>
+              <td scope="row"><strong>Thus</strong></td>
+              <td onclick="clmp()" colspan="2">L-MP</td>
+              <td onclick="ctc()">TC</td>
+              <td onclick="cmp()">T-MP</td>
+              <td onclick="cos()">T-OS</td>
+              <td onclick="cese()">T-ESE&#128531</td>
+              <td onclick="ctafl()">T-TAFL</td>
+              <td onclick="">--</td>
+            </tr>
+            <tr>
+              <td scope="row"><strong>Fri</strong></td>
+              <td onclick="gcred()">Quiz&#128534</td>
+              <td onclick="cmp()">MP</td>
+              <td onclick="cese()">ESE&#128531</td>
+              <td onclick="ctafl()">TAFL</td>
+              <td onclick="clpy()" colspan="2">L-PY</td>
+              <td onclick="" colspan="2">--</td>
+            </tr>
+          </tbody>
+        </table>
+        <script>
+          var d = new Date();
+          // var t=13*60+0;
+          var t=d.getHours()*60+d.getMinutes();
+          var	da=d.getDay();
+          // var da=5;
+          console.log(t);
+          if(da==0||da==6){tday=1;tlect=1}
+          else{
+              if(da==1){
+                tday=1;
+                if(t<595){tlect=1;}
+                else if(t<655){tlect=2}
+                else if(t<715){tlect=3}
+                else if(t<775){tlect=4}
+                else if(t<810){tlect=5}
+                else if(t<860){tlect=6}
+                else if(t<910){tlect=7}
+                else{tlect=1;tday++}
+              }
+              else if(da==2){
+                tday=2;
+                if(t<595){tlect=1;}
+                else if(t<655){tlect=2}
+                else if(t<715){tlect=3}
+                else if(t<775){tlect=4}
+                else if(t<810){tday=1;tlect=5}
+                else if(t<860){tlect=5}
+                else if(t<910){tlect=6}
+                else{tlect=1;tday++}
+              }
+              else if(da==3){
+                tday=3;
+                if(t<595){tlect=1;}
+                else if(t<655){tlect=2}
+                else if(t<715){tlect=3}
+                else if(t<775){tlect=4}
+                else if(t<810){tday=1;tlect=5}
+                else if(t<910){tlect=6}
+                else if(t<1010){tlect=7}
+                else{tlect=1;tday++}
+              }
+              else if(da==4){
+                tday=4;
+                if(t<655){tlect=1;}
+                else if(t<715){tlect=2}
+                else if(t<775){tlect=3}
+                else if(t<810){tday=1;tlect=5}
+                else if(t<860){tlect=4}
+                else if(t<910){tlect=5}
+                else if(t<960){tlect=6}
+                else{tlect=1;tday++}
+              }
+              else if(da==5){
+                tday=5;
+                if(t<595){tlect=1;}
+                else if(t<655){tlect=2}
+                else if(t<715){tlect=3}
+                else if(t<775){tlect=4}
+                else if(t<810){tday=1;tlect=5}
+                else if(t<910){tlect=5}
+                else{tlect=1;tday=1}
+              }
+          }
+          tabid="tab4";
+          var x = document.getElementById(tabid).getElementsByTagName("tr");
+          var y= x[tday].getElementsByTagName("td");
+          if(tlect==5&&tday==1){
+            y[tlect].style.backgroundImage = "url('https://iruntheinternet.com/lulzdump/images/gifs/baby-trying-to-eat-picture-of-food-13719516770.gif')";
+            y[tlect].style.backgroundPosition = "center center";
+            y[tlect].style.backgroundSize = "cover";
+            document.getElementById("luncht").style.display="none";
+          }
+          else{
+            y[tlect].classList.add("activem");
+            y[tlect].style.color = "white";
+        }
+        </script>
+      </div>
+    </div>
+</body>
+</html>
