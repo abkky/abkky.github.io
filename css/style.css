@@ -86,6 +86,9 @@
   /* #tab4 tr td:hover {
 	background: rgba(252, 113, 113, 0.199);
   } */
+  #tab4 tr td {
+	cursor:pointer;
+  }
 
   table {
 	text-align: center;
