@@ -289,7 +289,13 @@
         </table>
       </div>
       <div id="endsem" class="col s12">
-        <p class="center">MAUT KA FARMAN</p>
+        <div class="ribbon">
+          Maut Ka Farman
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div><br/><br/>
         <table class="highlight centered z-depth-1" id="tab3">
           <thead>
             <tr class="white-text black">
@@ -552,6 +558,16 @@
         }
         timeoutPeriod=60*1000;
         setTimeout("location.reload(true);", timeoutPeriod)
+        
+        </script>
+        <script>
+          $('.ribbon').on('click', function() {	
+  var self = $(this),
+      newone = self.clone(true);
+  
+  self.before(newone);
+  $("." + self.attr("class") + ":last").remove();
+});
         </script>
       </div>
     </div>
