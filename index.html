@@ -485,7 +485,6 @@
           var t=d.getHours()*60+d.getMinutes();
           var	da=d.getDay();
           // var da=5;
-          console.log(t);
           if(da==0||da==6){tday=1;tlect=1}
           else{
               if(da==1){
@@ -556,18 +555,22 @@
             y[tlect].classList.add("activem");
             y[tlect].style.color = "white";
         }
-        timeoutPeriod=60*1000;
-        setTimeout("location.reload(true);", timeoutPeriod)
+        if((da>=1 || da<=5)&&(t>595&&t<960))
+        {
+          timeoutPeriod=60*1000;
+          setTimeout("location.reload(true);", timeoutPeriod)
+        }
+        
         
         </script>
         <script>
           $('.ribbon').on('click', function() {	
-  var self = $(this),
-      newone = self.clone(true);
-  
-  self.before(newone);
-  $("." + self.attr("class") + ":last").remove();
-});
+            var self = $(this),
+                newone = self.clone(true);
+            
+            self.before(newone);
+            $("." + self.attr("class") + ":last").remove();
+          });
         </script>
       </div>
     </div>
